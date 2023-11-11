@@ -1,11 +1,11 @@
 import { GetServerSideProps } from "next";
-import { Banks } from "@/containers/banks";
-import { useGlobalContext } from "@/context/global/useGlobalContext";
-import { useLocalStorage } from "@/hooks/useLocalStorage";
-import { MainLayout } from "@/layouts/MainLayout";
-import { setCookie } from "@/hooks/useCookies";
 
 import { getData } from "@/api/index";
+// import { Banks } from "@/containers/banks";
+import { useGlobalContext } from "@/context/global/useGlobalContext";
+import { setCookie } from "@/hooks/useCookies";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
+// import { MainLayout } from "@/layouts/MainLayout";
 
 function BanksPage({ banks2 }: any) {
   const { banks } = useGlobalContext();
