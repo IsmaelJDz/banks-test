@@ -1,7 +1,9 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    node: true,
+    jest: true
   },
   extends: ["plugin:react/recommended", "standard"],
   parser: "@typescript-eslint/parser",
@@ -25,7 +27,13 @@ module.exports = {
     "space-before-function-paren": "off",
     "comma-dangle": ["warn", "only-multiline"],
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["error"],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        args: "none",
+        ignoreRestSiblings: true
+      }
+    ],
     "max-len": [
       "error",
       {

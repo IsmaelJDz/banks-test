@@ -3,8 +3,6 @@ import React from "react";
 import { BankComponentProps } from "@/types/common";
 
 const Banks = ({ banks }: BankComponentProps) => {
-  console.log("banks", banks);
-
   return (
     <div>
       <h1>Banks</h1>
@@ -14,7 +12,14 @@ const Banks = ({ banks }: BankComponentProps) => {
             <li key={bank.age}>
               <h3>{bank.bankName}</h3>
               <p>{bank.description}</p>
-              image: <img src={bank.url} alt={bank.bankName} />
+              image:{" "}
+              <img
+                width={180}
+                height={140}
+                loading="lazy"
+                src={bank.url}
+                alt={bank.bankName}
+              />
             </li>
           );
         })}

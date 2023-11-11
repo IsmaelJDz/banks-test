@@ -4,7 +4,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 // import { Author, SerializedData } from "@/interfaces/serialized-data";
 
 interface Props {
-  data: SerializedData;
+  data: any;
 }
 
 interface ProductNotExist {
