@@ -9,4 +9,4 @@ interface BankComponentProps {
   banks: BankProps[];
 }
 
-export type { BankProps, BankComponentProps };
+export type { BankComponentProps, BankProps };

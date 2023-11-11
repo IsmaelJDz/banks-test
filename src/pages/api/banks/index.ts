@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { ProductsResponse } from "@/interfaces/products";
-import { Author, SerializedData } from "@/interfaces/serialized-data";
+// import { ProductsResponse } from "@/interfaces/products";
+// import { Author, SerializedData } from "@/interfaces/serialized-data";
 
 interface Props {
   data: SerializedData;

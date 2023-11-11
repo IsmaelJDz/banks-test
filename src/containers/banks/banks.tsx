@@ -1,4 +1,5 @@
 import React from "react";
+
 import { BankComponentProps } from "@/types/common";
 
 const Banks = ({ banks }: BankComponentProps) => {

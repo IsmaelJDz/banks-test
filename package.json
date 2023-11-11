@@ -10,6 +10,7 @@
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "eslint": "eslint src --ext .ts,.tsx,.js",
+    "eslint:sort": "eslint src --ext .ts,.tsx,.js --fix",
     "format": "prettier --write ./**/*.{js,ts,tsx,css,md,json} --config ./.prettierrc"
   },
   "dependencies": {

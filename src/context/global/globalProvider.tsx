@@ -2,6 +2,7 @@ import { FC, useReducer } from "react";
 import { useQuery } from "react-query";
 
 import { getBanks } from "@/api/index";
+
 import { GlobalContext } from "./";
 import { BANKS } from "./global.constants";
 import { GlobalState, MainProviderProps } from "./globalAction.types";

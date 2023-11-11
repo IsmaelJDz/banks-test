@@ -1,4 +1,4 @@
-import { GlobalState, BankActionType } from "./globalAction.types";
+import { BankActionType, GlobalState } from "./globalAction.types";
 
 export const globalReducer = (
   state: GlobalState,

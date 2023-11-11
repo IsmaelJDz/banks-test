@@ -29,7 +29,7 @@ module.exports = {
     "max-len": [
       "error",
       {
-        code: 120,
+        code: 80,
         tabWidth: 2,
         ignoreComments: true,
         ignoreStrings: true,
@@ -37,18 +37,17 @@ module.exports = {
         ignoreUrls: true
       }
     ],
-    "sort-imports": [
-      "warn",
-      {
-        ignoreCase: false,
-        ignoreDeclarationSort: false,
-        ignoreMemberSort: false,
-        memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
-        allowSeparatedGroups: false
-      }
-    ],
+    // "sort-imports": [
+    //   "warn",
+    //   {
+    //     ignoreCase: false,
+    //     ignoreDeclarationSort: false,
+    //     ignoreMemberSort: false,
+    //     memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
+    //     allowSeparatedGroups: false
+    //   }
+    // ],
     "react-hooks/rules-of-hooks": "error",
-    // "sort-imports": "off",
     "import/order": "off",
     "simple-import-sort/exports": "error",
     "simple-import-sort/imports": [
