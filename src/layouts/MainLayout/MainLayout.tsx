@@ -1,7 +1,6 @@
 import Head from "next/head";
 
 import { MainLayoutProps } from "./MainLayout.types";
-// import { Navbar, SideMenu } from "../ui";
 
 function MainLayout({
   children,
@@ -21,11 +20,10 @@ function MainLayout({
       </Head>
 
       <nav>
-        {/* <Navbar /> */}
-        <p>Navbar</p>
+        <div className="p-4 mb-4 bg-pink-500">
+          <p className="text-center text-cyan-50">Developed by Ismael</p>
+        </div>
       </nav>
-
-      {/* <SideMenu /> */}
 
       <main>{children}</main>
     </>

@@ -23,8 +23,6 @@ export default async function handler(
 
     const jsonResponse: any = await response.json();
 
-    console.log(jsonResponse);
-
-    return res.status(200).json({ data: [] });
+    return res.status(200).json({ data: jsonResponse });
   }
 }

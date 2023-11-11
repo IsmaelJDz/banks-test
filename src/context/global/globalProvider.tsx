@@ -2,6 +2,7 @@ import { FC, useReducer } from "react";
 import { useQuery } from "react-query";
 
 import { getBanks } from "@/api/index";
+import { Loader } from "@/components/loader";
 
 import { GlobalContext } from "./";
 import { BANKS } from "./global.constants";
@@ -29,7 +30,7 @@ export const GlobalProvider: FC<MainProviderProps> = ({ children }) => {
         dispatch
       }}
     >
-      {isLoading ? <div>Loading...</div> : children}
+      {isLoading ? <Loader /> : children}
     </GlobalContext.Provider>
   );
 };

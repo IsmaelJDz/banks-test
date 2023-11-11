@@ -5,7 +5,7 @@ import { isStaleTimeCache } from "@/utils/common";
 
 const base = process.env.NEXT_PUBLIC_API_ENDPOINT;
 
-const userBase = `${base}/catom/api/challenge/banks`;
+const apiBase = `${base}/catom/api/challenge/banks`;
 
 function getBanks(): Promise<any> {
   const banksStorage = localStorage.getItem("banks");
@@ -15,9 +15,16 @@ function getBanks(): Promise<any> {
   }
 
   return axios
-    .get(userBase, { withCredentials: true })
+    .get(apiBase, { withCredentials: true })
     .then(res => res.data)
     .catch(() => null);
 }
 
-export { getBanks };
+const getData = async (api: string) => {
+  const response = await fetch(`${api}`);
+  const banksData = await response.json();
+
+  return banksData;
+};
+
+export { getBanks, getData };

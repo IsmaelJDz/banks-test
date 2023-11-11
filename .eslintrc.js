@@ -70,7 +70,7 @@ module.exports = {
         considerQueryString: true
       }
     ],
-    "multiline-ternary": ["warn", "never"],
+    "multiline-ternary": ["warn", "always-multiline"],
     // "multiline-ternary": "off",
     "no-undef": "warn",
     "n/handle-callback-err": "warn",

@@ -3,10 +3,15 @@ interface BankProps {
   age: number;
   url: string;
   bankName: string;
+  handleClick?: (bankId: number) => void;
 }
 
 interface BankComponentProps {
   banks: BankProps[];
 }
 
-export type { BankComponentProps, BankProps };
+interface BankResponseProps {
+  data: BankProps[];
+}
+
+export type { BankComponentProps, BankProps, BankResponseProps };

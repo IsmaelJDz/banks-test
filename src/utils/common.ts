@@ -1,5 +1,7 @@
 import { differenceInHours } from "date-fns";
 
+import { BankProps, BankResponseProps } from "@/types/common";
+
 function isStaleTimeCache(target: string) {
   const date = new Date(localStorage.getItem(`${target}_time`)!);
   const now = new Date();
@@ -15,4 +17,10 @@ function isStaleTimeCache(target: string) {
   return false;
 }
 
-export { isStaleTimeCache };
+function filterBanks(banks: BankResponseProps, id: string) {
+  const { data } = banks;
+
+  return data.find((bankItem: BankProps) => bankItem.age.toString() === id);
+}
+
+export { filterBanks, isStaleTimeCache };
