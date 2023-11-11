@@ -54,7 +54,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const banksResponse = await getData(
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000/api/banks"
-      : "https://banks-test.vercel.app/api/banks"
+      : "https://banks-test-ismaelbr7.vercel.app/api/banks"
   ).catch(err => {
     console.log("ERROR", err);
   });

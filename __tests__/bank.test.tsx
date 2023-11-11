@@ -3,7 +3,9 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 
 import { Banks } from "../src/containers/banks/banks";
-import { banks } from "./mocks/bank.mock";
+import { banks } from "../src/mocks/bank.mock";
+
+jest.mock("next/router", () => jest.requireActual("next-router-mock"));
 
 describe("Home", () => {
   it("renders a heading <Banks /> component", async () => {

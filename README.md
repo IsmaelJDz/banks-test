@@ -1,6 +1,6 @@
 # Frontend Memory Game 🎮
 
-![Captura de la app](public/app/memory_game.png)
+![Captura de la app](public/images/banks.png)
 
 [See the aplication](https://memory-game-ten-kappa.vercel.app/) 👀
 

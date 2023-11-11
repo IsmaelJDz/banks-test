@@ -12,9 +12,6 @@ function BanksPage() {
     localStorage.setItem("banks_time", new Date().toISOString());
   }
 
-  // TODO: create bank card component
-  // TODO: add more test, style and refactor (types, code, etc)
-
   return (
     <MainLayout title="Banks" pageDescription="The best banks in Mexico">
       <Banks banks={banks} />
