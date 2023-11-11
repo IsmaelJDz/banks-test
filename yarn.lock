@@ -1156,6 +1156,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/js-cookie@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@types/js-cookie@npm:3.0.2"
+  checksum: 7ab964288dd26373e134ed0bcde4a7dbea7e6f5de1805e2d1e48eac847e89a0e7f5fdc9164c37931680ec97c6e6e5a73e3e4039e0d08527c2e21badd7bee62d1
+  languageName: node
+  linkType: hard
+
 "@types/json-schema@npm:^7.0.9":
   version: 7.0.15
   resolution: "@types/json-schema@npm:7.0.15"
@@ -1893,6 +1900,7 @@ __metadata:
     "@testing-library/jest-dom": latest
     "@testing-library/react": latest
     "@testing-library/user-event": latest
+    "@types/js-cookie": 3.0.2
     "@types/node": 20.9.0
     "@types/nprogress": ^0.2.0
     "@types/react": 18.2.37
@@ -1919,6 +1927,7 @@ __metadata:
     eslint-plugin-testing-library: ^5.0.1
     husky: 2.7.0
     jest: 27.4.5
+    js-cookie: 3.0.1
     next: 14.0.1
     next-router-mock: ^0.9.10
     nprogress: ^0.2.0
@@ -5138,6 +5147,13 @@ __metadata:
   bin:
     jiti: bin/jiti.js
   checksum: a7bd5d63921c170eaec91eecd686388181c7828e1fa0657ab374b9372bfc1f383cf4b039e6b272383d5cb25607509880af814a39abdff967322459cca41f2961
+  languageName: node
+  linkType: hard
+
+"js-cookie@npm:3.0.1":
+  version: 3.0.1
+  resolution: "js-cookie@npm:3.0.1"
+  checksum: bb48de67e2a6bd1ae3dfd6b2d5a167c33dd0c5a37e909206161eb0358c98f17cb55acd55827a58e9eea3630d89444e7479f7938ef4420dda443218b8c434a4c3
   languageName: node
   linkType: hard
 

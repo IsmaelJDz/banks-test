@@ -2,9 +2,7 @@ import axios from "axios";
 
 import { isStaleTimeCache } from "@/utils/common";
 
-const base = process.env.NEXT_PUBLIC_API_ENDPOINT;
-
-const apiBase = `${base}catom/api/challenge/banks`;
+const apiBase = "https://banks-test-ismaelbr7.vercel.app/api/banks";
 
 function getBanks(): Promise<any> {
   const banksStorage = localStorage.getItem("banks");
