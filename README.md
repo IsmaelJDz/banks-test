@@ -1,4 +1,4 @@
-# Frontend Memory Game 🎮
+# Frontend Banks App
 
 ![Captura de la app](public/images/banks.png)
 

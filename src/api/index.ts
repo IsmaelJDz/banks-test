@@ -1,13 +1,12 @@
 import axios from "axios";
 
-import { BankProps } from "@/types/common";
 import { isStaleTimeCache } from "@/utils/common";
 
 const base = process.env.NEXT_PUBLIC_API_ENDPOINT;
 
 const apiBase = `${base}/catom/api/challenge/banks`;
 
-function getBanks(): Promise<BankProps> {
+function getBanks(): Promise<any> {
   const banksStorage = localStorage.getItem("banks");
 
   if (banksStorage && isStaleTimeCache("banks")) {

@@ -20,6 +20,8 @@ export const GlobalProvider: FC<MainProviderProps> = ({ children }) => {
 
   const { data, isLoading, refetch } = useQuery(BANKS, getBanks);
 
+  console.log("data ====>", data);
+
   return (
     <GlobalContext.Provider
       value={{
