@@ -22,4 +22,4 @@ function useCookies() {
   };
 }
 
-export { useCookies, setCookie, deleteCookie, getCookie };
+export { deleteCookie, getCookie, setCookie, useCookies };
