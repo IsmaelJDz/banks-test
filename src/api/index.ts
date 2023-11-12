@@ -1,20 +1,11 @@
-import axios from "axios";
-
-import { isStaleTimeCache } from "@/utils/common";
-
-const apiBase = "https://banks-test-ismaelbr7.vercel.app/api/banks";
-
-function getBanks(): Promise<any> {
+function getBanks(): Promise<any> | null {
   const banksStorage = localStorage.getItem("banks");
 
-  if (banksStorage && isStaleTimeCache("banks")) {
+  if (banksStorage) {
     return Promise.resolve(JSON.parse(banksStorage));
   }
 
-  return axios
-    .get(apiBase, { withCredentials: false })
-    .then(res => res.data)
-    .catch(() => null);
+  return null;
 }
 
 const getData = async (api: string) => {
