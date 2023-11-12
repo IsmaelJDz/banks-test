@@ -2,7 +2,7 @@
 
 ![Captura de la app](public/images/banks.png)
 
-[See the aplication](https://memory-game-ten-kappa.vercel.app/) 👀
+[See the aplication](https://banks-test.vercel.app/) 👀
 
 ## Welcome! 👋
 
