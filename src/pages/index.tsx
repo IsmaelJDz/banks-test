@@ -5,13 +5,10 @@ import { Banks } from "@/containers/banks";
 import { useGlobalContext } from "@/context/global/useGlobalContext";
 import { setCookie } from "@/hooks/useCookies";
 import { MainLayout } from "@/layouts/MainLayout";
+import { BankComponentProps } from "@/types/common";
 
-function BanksPage({ banks }: any) {
-  console.log("banks", banks);
-
+function BanksPage({ banks }: BankComponentProps) {
   const { banksStorage, setStoredBanks } = useGlobalContext();
-
-  console.log("banksStorage", banksStorage);
 
   if (banks.length && banksStorage.length === 0) {
     setStoredBanks(banks);
