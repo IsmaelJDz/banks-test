@@ -11,7 +11,7 @@ function MainLayout({
   return (
     <>
       <Head>
-        <title>Shop</title>
+        <title>Banks</title>
         <meta name="description" content={pageDescription} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={pageDescription} />

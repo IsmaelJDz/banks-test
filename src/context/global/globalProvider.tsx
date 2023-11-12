@@ -25,9 +25,9 @@ export const GlobalProvider: FC<MainProviderProps> = ({ children }) => {
       value={{
         ...state,
         data,
+        dispatch,
         isLoading,
-        refetch,
-        dispatch
+        refetch
       }}
     >
       {isLoading ? <Loader /> : children}

@@ -1,7 +1,7 @@
 import { BankProps } from "@/types/common";
 
 enum BanksActions {
-  SET_BANKS = "SET_ME"
+  SET_BANKS = "SET_BANKS"
 }
 
 interface PropsResponse {

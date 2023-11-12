@@ -20,6 +20,10 @@ function isStaleTimeCache(target: string) {
 }
 
 function filterBanks(banks: BankProps[], id: string) {
+  if (!banks.length) {
+    return null;
+  }
+
   return banks.find((bankItem: BankProps) => bankItem.age.toString() === id);
 }
 

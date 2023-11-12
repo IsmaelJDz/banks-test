@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { getData } from "@/api/index";
 import { Card } from "@/components/card";
 import { Loader } from "@/components/loader";
+import { MainLayout } from "@/layouts/MainLayout";
 import { BankProps } from "@/types/common";
 import { filterBanks } from "@/utils/common";
 
@@ -22,7 +23,7 @@ export default function Main({ banks }: { banks: BankProps }) {
   const { age, bankName, description, url } = banks;
 
   return (
-    <div>
+    <MainLayout title={`bank ${bankName}`} pageDescription={description}>
       <p
         className="flex items-center gap-2 pt-2 ml-4 cursor-pointer"
         onClick={onBackClick}
@@ -40,14 +41,14 @@ export default function Main({ banks }: { banks: BankProps }) {
           age={age}
         />
       </div>
-    </div>
+    </MainLayout>
   );
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
   const slug = params?.slug as string;
 
-  const banksResponse = await getData(
+  const banksResponse: BankProps[] = await getData(
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000/api/banks"
       : "https://dev.obtenmas.com/catom/api/challenge/banks"
