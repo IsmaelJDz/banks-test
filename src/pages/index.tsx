@@ -40,7 +40,9 @@ export const getServerSideProps: GetServerSideProps = async context => {
   }
 
   const banksResponse = await getData(
-    "https://dev.obtenmas.com/catom/api/challenge/banks"
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000/api/banks"
+      : "https://dev.obtenmas.com/catom/api/challenge/banks"
   ).catch(err => {
     console.log("ERROR", err);
   });

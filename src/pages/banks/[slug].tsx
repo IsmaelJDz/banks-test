@@ -55,6 +55,8 @@ export const getServerSideProps: GetServerSideProps = async ({ params }) => {
     console.log("ERROR", err);
   });
 
+  console.log("banksResponse ====>", banksResponse);
+
   const bank = filterBanks(banksResponse, slug);
 
   return {
