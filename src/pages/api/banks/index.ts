@@ -1,7 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import { BankProps } from "@/types/common";
 
 interface Props {
-  data: any;
+  data: BankProps;
 }
 
 interface ProductNotExist {

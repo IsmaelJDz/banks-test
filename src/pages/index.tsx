@@ -30,7 +30,6 @@ function BanksPage({ banks }: any) {
 
 export const getServerSideProps: GetServerSideProps = async context => {
   const cookies = context.req.headers.cookie;
-  // console.log("cookies server =====>", cookies);
 
   if (cookies) {
     return {

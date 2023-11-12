@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
@@ -44,27 +44,22 @@ export default function Main({ banks }: { banks: BankProps }) {
   );
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  return { paths: [], fallback: true };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { slug } = params as { slug: string };
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+  const slug = params?.slug as string;
 
   const banksResponse = await getData(
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000/api/banks"
-      : "https://banks-test-ismaelbr7.vercel.app/api/banks"
+      : "https://dev.obtenmas.com/catom/api/challenge/banks"
   ).catch(err => {
     console.log("ERROR", err);
   });
 
-  const data = filterBanks(banksResponse, slug);
+  const bank = filterBanks(banksResponse, slug);
 
   return {
     props: {
-      banks: data
-    },
-    revalidate: Number(process.env.NEXT_REVALIDATE_SECONDS)
+      banks: bank
+    }
   };
 };
