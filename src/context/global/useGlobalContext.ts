@@ -1,13 +1,22 @@
 import { useContext } from "react";
 
 import { GlobalContext } from "@/context/global/globalContext";
+import { isStaleTimeCache } from "@/utils/common";
+import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 function useGlobalContext() {
-  const { isLoading, data: banks } = useContext(GlobalContext);
+  const [storedBanks, setStoredBanks] = useLocalStorage("banks", []);
+  const { isLoading } = useContext(GlobalContext);
+
+  if (storedBanks) {
+    isStaleTimeCache("banks");
+  }
 
   return {
-    banks,
-    isLoading
+    banksStorage: storedBanks.length ? storedBanks : [],
+    isLoading,
+    storedBanks,
+    setStoredBanks
   };
 }
 

@@ -1,43 +1,44 @@
 import { GetServerSideProps } from "next";
 
 import { getData } from "@/api/index";
-// import { Banks } from "@/containers/banks";
+import { Banks } from "@/containers/banks";
 import { useGlobalContext } from "@/context/global/useGlobalContext";
 import { setCookie } from "@/hooks/useCookies";
-import { useLocalStorage } from "@/hooks/useLocalStorage";
-// import { MainLayout } from "@/layouts/MainLayout";
+import { MainLayout } from "@/layouts/MainLayout";
 
-function BanksPage({ banks2 }: any) {
-  const { banks } = useGlobalContext();
-  const [storedBanks, setStoredBanks] = useLocalStorage("banks", []);
+function BanksPage({ banks }: any) {
+  console.log("banks", banks);
 
-  console.log("banks2", banks2);
+  const { banksStorage, setStoredBanks } = useGlobalContext();
 
-  if (banks.length > 0 && storedBanks.length === 0) {
+  console.log("banksStorage", banksStorage);
+
+  if (banks.length && banksStorage.length === 0) {
     setStoredBanks(banks);
     setCookie("banks", JSON.stringify(true));
     localStorage.setItem("banks_time", new Date().toISOString());
   }
 
+  const storageBanks = banks.length ? banks : banksStorage;
+
   return (
-    <p>TEST</p>
-    // <MainLayout title="Banks" pageDescription="The best banks in Mexico">
-    //   <Banks banks={banks} />
-    // </MainLayout>
+    <MainLayout title="Banks" pageDescription="The best banks in Mexico">
+      <Banks banks={storageBanks} />
+    </MainLayout>
   );
 }
 
 export const getServerSideProps: GetServerSideProps = async context => {
-  // const cookies = context.req.headers.cookie;
+  const cookies = context.req.headers.cookie;
   // console.log("cookies server =====>", cookies);
 
-  // if (cookies) {
-  //   return {
-  //     props: {
-  //       banks2: []
-  //     }
-  //   };
-  // }
+  if (cookies) {
+    return {
+      props: {
+        banks: []
+      }
+    };
+  }
 
   const banksResponse = await getData(
     "https://dev.obtenmas.com/catom/api/challenge/banks"
@@ -47,7 +48,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
 
   return {
     props: {
-      banks2: banksResponse
+      banks: banksResponse
     }
   };
 };

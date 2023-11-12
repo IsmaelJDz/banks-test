@@ -1,5 +1,6 @@
 import { differenceInHours } from "date-fns";
 
+import { deleteCookie } from "@/hooks/useCookies";
 import { BankProps, BankResponseProps } from "@/types/common";
 
 function isStaleTimeCache(target: string) {
@@ -14,6 +15,7 @@ function isStaleTimeCache(target: string) {
 
   localStorage.removeItem(target);
   localStorage.removeItem(`${target}_time`);
+  deleteCookie("banks");
   return false;
 }
 
