@@ -1,8 +1,8 @@
 import { useContext } from "react";
 
 import { GlobalContext } from "@/context/global/globalContext";
-import { isStaleTimeCache } from "@/utils/common";
 import { useLocalStorage } from "@/hooks/useLocalStorage";
+import { isStaleTimeCache } from "@/utils/common";
 
 function useGlobalContext() {
   const [storedBanks, setStoredBanks] = useLocalStorage("banks", []);
